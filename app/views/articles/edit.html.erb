@@ -1,0 +1,32 @@
+<div class="editor-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-xs-12">
+        <ul class="error-messages">
+          <%# <li>That title is required</li> %>
+        </ul>
+
+        <%= form_with model: @article do |form| %>
+          <fieldset>
+            <fieldset class="form-group">
+              <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "タイトルを入力" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= form.text_field :about, class: "form-control", placeholder: "タイトルの説明" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= form.text_area :description, class: "form-control", rows: "8" , placeholder: "記事の中身を書いてください" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= form.text_field :tags, class:"form-control", placeholder: "タグを入力" %>
+              <div class="tag-list">
+                <span class="tag-default tag-pill"> <i class="ion-close-round"></i></span>
+              </div>
+            </fieldset>
+            <%= form.submit class:"btn btn-lg pull-xs-right btn-primary" %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
